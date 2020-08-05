@@ -1,2 +1,4 @@
 # killerdice
-A dice rolling application, probably mostly for DnD, but potentially other games as well.
+A dice rolling application.
+
+Rolling format is:(# of dice) d (type of dice) +/- (modifier) 

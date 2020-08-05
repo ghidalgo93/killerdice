@@ -1,19 +1,26 @@
-import random
+import re
 
-dsize = int(input("What kind of dice would you like to roll? "))
-dnum = int(input("How many of those dice would you like to roll? "))
-modQuestion = input("Would you like to add a modifier (y/n)? ")
-if modQuestion == 'y':
-    mod = int(input("What would you like to add/subtract? "))
+foo = "2d6"
 
-dicelist = []
-modlist = []
+if re.fullmatch('\d+d\d+[+-]{0,1}\d*', foo.replace(" ", "")):
+    print("success")
+else:
+    print("fail")
 
-for i in range(0,dnum):
-    n = random.randint(1,dsize)
-    if modQuestion == 'y':
-        modlist.append(n+mod)
-    dicelist.append(n)
+bar = re.split('([d+-])', foo.replace(" ", ""))
 
-print(dicelist)
-print(modlist)
+
+dnum = int(bar[0])
+dtype = int(bar[2])
+
+
+if len(bar) > 3:
+    dmod = int(bar[3] + bar[4])
+else:
+    dmod = 0
+
+
+print(bar)
+print(dnum)
+print(dtype)
+print(dmod)
