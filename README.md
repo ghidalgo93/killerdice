@@ -1,4 +1,4 @@
 # killerdice
 A dice rolling application.
 
-Rolling format is:(# of dice) d (type of dice) +/- (modifier) 
+Start program with "python3 killerdice.py"
